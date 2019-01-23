@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spel", "Spel\Spel\Spel.csproj", "{4EE9A9BB-D99E-4917-BEF6-4264E37ED796}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SpelContent", "Spel\SpelContent\SpelContent.contentproj", "{76540BD6-5666-48C5-AD3F-9CE6E5DCE857}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EE9A9BB-D99E-4917-BEF6-4264E37ED796}.Debug|x86.ActiveCfg = Debug|x86
+		{4EE9A9BB-D99E-4917-BEF6-4264E37ED796}.Debug|x86.Build.0 = Debug|x86
+		{4EE9A9BB-D99E-4917-BEF6-4264E37ED796}.Release|x86.ActiveCfg = Release|x86
+		{4EE9A9BB-D99E-4917-BEF6-4264E37ED796}.Release|x86.Build.0 = Release|x86
+		{76540BD6-5666-48C5-AD3F-9CE6E5DCE857}.Debug|x86.ActiveCfg = Debug|x86
+		{76540BD6-5666-48C5-AD3F-9CE6E5DCE857}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

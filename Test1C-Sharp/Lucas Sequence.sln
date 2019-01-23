@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucas Sequence", "Test1C-Sharp\Lucas Sequence.csproj", "{784516B1-6CA5-4CB8-BB56-E57C3D8CC916}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{784516B1-6CA5-4CB8-BB56-E57C3D8CC916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{784516B1-6CA5-4CB8-BB56-E57C3D8CC916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{784516B1-6CA5-4CB8-BB56-E57C3D8CC916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{784516B1-6CA5-4CB8-BB56-E57C3D8CC916}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EEF9574-1B41-4F70-9E9B-641A7BE5C258}
+	EndGlobalSection
+EndGlobal

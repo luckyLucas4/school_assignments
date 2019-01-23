@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediaregistret", "Mediaregistret\Mediaregistret.csproj", "{D07D9144-3710-42AA-8344-F08BD99462AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D07D9144-3710-42AA-8344-F08BD99462AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07D9144-3710-42AA-8344-F08BD99462AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07D9144-3710-42AA-8344-F08BD99462AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07D9144-3710-42AA-8344-F08BD99462AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5325E953-FA18-4652-A29E-B927E6589C85}
+	EndGlobalSection
+EndGlobal

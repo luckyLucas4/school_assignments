@@ -1,0 +1,110 @@
+html{height: 100%;}
+body{height: 100%;}
+/*Body samt Bakgrund*/
+body{	
+	  background-image: url("BackgroundPink.jpg");
+	  background-size: 110%;
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  z-index: 2;
+	  overflow:hidden;}
+.PONGTEXT{
+	  font-family: 'Josefin Sans', sans-serif;
+	  font-size: 100px;
+	  color: black;
+	  opacity: 0.20;
+	  text-align: center;
+	  
+	  margin: 100px;
+	  
+	  
+	  
+}
+.Huvudbox{
+	  border: 1px solid rgba(250, 250, 250, 0);
+	  width: 960px;
+	  height: 100%;
+	  margin-left: auto;
+	  margin-right: auto;
+	  margin-top: -10px;
+	  margin-bottom: 0px;
+	  position: relative;
+	  background-color: rgba(250, 250, 250, 0.45);
+}
+/*Denna är för att ta bort underlinjen från "text"länkar*/
+.noDecoration{text-decoration: none;}
+/*Id tag för de tre små boxarna*/
+#Treboxar{
+	  border: 0px solid;
+	  width: 100px;
+	  height: 25px;
+	  background-color: rgba(250, 250, 250, 0.45);
+	  
+}
+.text1{
+	  font-family: 'Josefin Sans', sans-serif;
+	  font-size: 25px;
+	  color:rgb(122, 122, 122);
+	  position: absolute;
+	  bottom: -25px;
+	  left: 5px;
+
+	}
+.text2{
+	  font-family: 'Josefin Sans', sans-serif;
+	  font-size: 25px;
+	  color:rgb(122, 122, 122);
+	  position: absolute;
+	  bottom: -25px;
+	  left: 5px;
+
+	}
+.text3{
+	  font-family: 'Josefin Sans', sans-serif;
+	  font-size: 25px;
+	  color:rgb(122, 122, 122);
+	  position: absolute;
+	  bottom: -25px;
+	  left: 5px;
+
+}
+.meny1{
+	  position: absolute;
+	  top:96.5%;}
+.meny2{
+	  position: absolute;
+	  top: 96.5%;
+	  left: 105px;}
+.meny3{
+	  position:absolute;
+	  top:96.5%;
+	  left: 210px
+}
+     
+.PjattBox{
+	
+	background-color: rgba(250, 250, 250, 0.6);
+	position: fixed;
+	left: 550px;
+	top: 250px;
+	width: 500px;
+	height: 100px;
+	z-index: 0;
+}
+
+.AbdiBox{
+	background-color: rgba(250, 250, 250, 0.6);
+	position: fixed;
+	left: 550px;
+	top: 370px;
+	width: 500px;
+	height: 100px;
+	z-index: 0;
+}
+
+#Kontakttext{
+	  font-family: 'Josefin Sans', sans-serif;
+	  font-size: 30px;
+	  color: black;
+	  opacity: 0.8;
+}

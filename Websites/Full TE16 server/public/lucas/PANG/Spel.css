@@ -1,0 +1,115 @@
+html{height: 100%;}
+body{height: 100%;}
+/*Body samt Bakgrund*/
+body{	
+	  background-image: url("BackgroundPink.jpg");
+	  background-size: 110%;
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  z-index: 2;
+	  overflow:hidden;}
+
+.Huvudbox{
+	  border: 1px solid rgba(250, 250, 250, 0);
+	  width: 960px;
+	  height: 100%;
+	  margin-left: auto;
+	  margin-right: auto;
+	  margin-top: -10px;
+	  margin-bottom: 0px;
+	  position: relative;
+	  background-color: rgba(250, 250, 250, 0.45);
+}
+/*Denna är för att ta bort underlinjen från "text"länkar*/
+.noDecoration{text-decoration: none;}
+/*Id tag för de tre små boxarna med "hem" "about" och "kontaktinfo"*/
+#Treboxar{
+	  border: 0px solid;
+	  width: 100px;
+	  height: 25px;
+	  background-color: rgba(250, 250, 250, 0.45);
+	  
+}
+.text1{
+	  font-family: 'Josefin Sans', sans-serif;
+	  font-size: 25px;
+	  color:rgb(122, 122, 122);
+	  position: absolute;
+	  bottom: -25px;
+	  left: 5px;
+
+	}
+.text2{
+	  font-family: 'Josefin Sans', sans-serif;
+	  font-size: 25px;
+	  color:rgb(122, 122, 122);
+	  position: absolute;
+	  bottom: -25px;
+	  left: 5px;
+
+	}
+.text3{
+	  font-family: 'Josefin Sans', sans-serif;
+	  font-size: 25px;
+	  color:rgb(122, 122, 122);
+	  position: absolute;
+	  bottom: -25px;
+	  left: 5px;
+
+}
+.meny1{
+	  position: absolute;
+	  top:96.5%;}
+.meny2{
+	  position: absolute;
+	  top: 96.5%;
+	  left: 105px;}
+.meny3{
+	  position:absolute;
+	  top:96.5%;
+	  left: 210px
+}
+
+
+/*Id taggen som designar alla menyboxar*/
+#menyboxar{
+	  border: 0px solid;
+	  width: 211px;
+	  
+	  height: 300px;
+	  background-color: rgba(255, 255, 255, 0.4)
+}
+/*Id taggen för textten i vardera box*/
+#menytext{ 
+	  font-family: "Josefin sans" , sans serif;
+	  font-size: 20px;
+	  color: black;
+	  opacity: 0.4;
+	  
+}
+
+/*Alla boxar får en egen class som bestämmer positioneringen*/
+.menybox1{
+	  position:absolute;
+	  left: 0px;
+	  top: 200px;
+	  }
+.menybox2{
+	  position: absolute;
+	  left: 426px;
+	  top: 200px;
+}
+.menybox3{
+	  position:absolute;
+	  left: 639px;
+	  top: 200px;
+}
+.menybox4{
+	  position:absolute;
+	  left: 213px;
+	  top: 200px;
+}
+
+
+
+

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Memory About Assassin's Creed</title>
+    <link rel="icon" href="img/AC logo.jpg" />
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="Navbar.css" />
+    <link rel="stylesheet" type="text/css" href="Memory.css" />
+    <script src="Memory_new.js"></script>
+</head>
+<body>
+    <ul class="navbar">
+        <li class="navbar"><a href="Mainpage.html">Home</a></li>
+        <li class="navbar"><a href="Games.html">Games</a></li>
+        <li class="navbar"><a class="active" href="Memory.html">Weapons memory</a></li>
+    </ul>
+    <div id="wrapper">
+        <div id="info">
+            <h1>Memory Page</h1><br/>
+            <button id="button1" onclick="memoryStart()">Start memory</button>
+        </div>
+        
+         <ul class="memory" id="row1">
+            <li class="memory" id="square0" onclick="memoryClick(this, 0)"></li>
+            <li class="memory" id="square1" onclick="memoryClick(this, 1)"></li>
+            <li class="memory" id="square2" onclick="memoryClick(this, 2)"></li>
+        </ul>
+        <ul class="memory" id="row2">
+            <li class="memory" id="square3" onclick="memoryClick(this, 3)"></li>
+            <li class="memory" id="square4" onclick="memoryClick(this, 4)"></li>
+            <li class="memory" id="square5" onclick="memoryClick(this, 5)"></li>
+        </ul>
+    </div>
+</body>
+</html>

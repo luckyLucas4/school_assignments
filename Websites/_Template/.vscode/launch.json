@@ -1,0 +1,63 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Launch index.html",
+            "type": "chrome",
+            "request": "launch",
+            "sourceMaps": true,
+            "file" : "${workspaceRoot}/index.html",
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            // "debugServer": 4712,
+            "name": "launch as server",
+            "type": "node",
+            "protocol": "inspector",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/out/bundle.js",
+            "runtimeArgs": ["--harmony"],
+            "stopOnEntry": false,
+            "args": [ "--server=4712" ],
+            "sourceMaps": true,
+            "outFiles": ["${workspaceRoot}/out/**/*.js"]
+        },
+        {
+            // "debugServer": 4712,
+            "name": "test",
+            "type": "node",
+            "protocol": "inspector",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "-u", "tdd",
+				"--colors",
+				"out/test/**/*.test.js",
+                "--reporter", "out/test/int/loggingReporter.js",
+                "--timeout", "1800000"
+            ],
+            "sourceMaps": true,
+            "outFiles": ["${workspaceRoot}/out/**/*.js"]
+        },
+        {
+			"name": "Run Extension",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"--extensionDevelopmentPath=${workspaceRoot}"
+			],
+			"sourceMaps": true,
+			"outFiles": [ "${workspaceRoot}/out/**/*.js" ]
+		}
+    ]
+}

@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+a {
+    font-size: 20px;
+    margin: 40px;
+    text-decoration: none;
+}
+
+#text{
+    /*border: 1px solid black;*/
+    padding: 30px;
+}
+
+#links{
+    margin-top: 60px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 30px;
+    margin-right: 40px;
+}

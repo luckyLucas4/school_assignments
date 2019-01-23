@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<title>Formulär</title>
+    <link rel="stylesheet" href="nav-bar.css">
+    <meta charset="utf-8">
+    <style>
+    div.form{
+        color:black; 
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        border: 1px solid black;
+        margin: 100px 200px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        width: 350px;
+        border-radius: 25px;
+    }
+    input{
+        margin-top: 10px;
+        padding: 10px 15px;
+    }
+    input.big{
+        width: 300px;
+        height: 200px;
+    }
+    </style>
+</head>
+<body>
+<div id="nav-bar">
+    <a class="home" href="index.html">Hemsida</a>
+    <a href="tables.html">Tables</a>
+    <a href="frames.html">Frames</a>
+    <a class="active" href="#">Formulär</a>
+</div> <br> <br> <br>
+    <div class="form">
+    <form>
+        Förnamn: <br>
+        <input type="text" name="first name" autofocus placeholder="Anders"> <br> <br>
+        Efternamn: <br>
+        <input type="text" name="last name" placeholder="Svensson"> <br> <br>
+        E-postaddress: <br>
+        <input type="text" name="e-mail" placeholder="eMail@are.com"> <br> <br>
+        Meddelande:
+        <textarea rows="12" cols="40" placeholder="Skriv något fint"></textarea>
+        <input type="submit" value="Skicka meddelande!">
+    </form>
+    </div>
+</body>
+</html>

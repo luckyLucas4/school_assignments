@@ -1,0 +1,63 @@
+body {
+	/*Sätter font och storlek på all text*/
+    font-family: Verdana,sans-serif;
+    font-size: 0.9em;
+}
+
+header  {
+	/*Sätter headern på rätt ställe och färg på texten*/
+	text-align: center;
+    padding: 1.5%;
+    color: white; 
+	margin: 1%;
+}
+nav ul  a:link ,a:hover, a:active {
+	/*Bestämmer vad som händer när man trycker, har tryckt och hovrar över länkarna i nav*/
+    color: black;
+    text-decoration: none;
+    
+}
+
+nav ul li {
+	/*bakgrundsfärg, placering och färg på nav*/
+	text-decoration: none;
+	background-color:white;
+	padding: 0.45% 4.5%;
+    display: inline;
+    margin:-2.4%;
+	
+}
+
+section {
+	/*Sätter sektionen med all text rätt och bestämmer bakgrundsfärgen*/
+    margin: 1%;
+    padding: 1%;
+    background-color:black;
+	color: white;
+	
+}
+
+article {
+	/*Går in i själva texten och sätter den rätt och ändrar bakgrundsfärgen*/
+    margin: 1%;
+    padding: 0.4%;
+    background-color: black;
+}
+
+
+form {
+	/*Bakgrundsfärg på form och placering*/
+	padding: 0% 1%;
+    color:white;
+	
+	
+}
+
+ footer {
+	 /*placering, färg och bakgrundsfärg på footer*/
+	 padding: 0.2% 1% ;
+	 text-align: left;
+	 color: black;
+	 background-color: white;
+	 margin: 1%;
+}

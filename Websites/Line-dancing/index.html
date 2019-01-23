@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Line-dancing</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+        <div class="row-fluid">
+                <canvas class="col-sm-11" width="1100" height="500" id="myCanvas"></canvas>
+                <form class="col-sm-1" style="margin-top:50px">
+                    <h4>Gravitation: </h4>
+                    <input type="number" id="gravity" min="0" style="width: 3em; font-size:2em">
+                </form>
+        </div>
+    <section class="container">
+        <div class="row-fluid" style="text-align:center">
+            <div class="col-sm-3" >
+                <h3><b>Kontroller: </b></h3>
+            </div>
+            <div class="col-sm-3 bottom-column" >
+                <h3>Sidled: <span style="color: blue">A / D</span> och <span style="color:green">&larr; / &rarr;</span></h3>
+            </div>
+            <div class="col-sm-3 bottom-column" >
+                <h3>Hoppa: <span style="color: blue">W</span> och <span style="color: green">&uarr;</span></h3>
+            </div>
+            <div class="col-sm-3 bottom-column" >
+                <h3>Slag: <span style="color: blue">Space</span> och <span style="color: green">Enter</span></h3>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

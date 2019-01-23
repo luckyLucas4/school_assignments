@@ -1,0 +1,67 @@
+﻿@font-face {
+     font-family: Assassin;
+     src: url('Assassin$.ttf'); 
+}
+
+body {
+    background-color:darkcyan;
+    font: 20px Assassin;
+    text-align: center;
+}
+p {
+    font-size: 20px;
+}
+
+h1, h2, h3, p{
+    color: white;
+}
+
+h1 {
+    font-size: 60px; 
+}
+
+#wrapper{
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 100px;
+    text-align:center;
+    padding-top: 10px;
+}
+
+/*Prevent the items from being selectable*/
+li, ul, h1, h2, button {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+/*For mainpage*/
+body.mainpage {
+    background-image: url('img/AC_Revelations.jpg');
+    background-size: cover;
+}
+
+#mainpage_textbox{
+    background-color: black;
+    padding: 30px;
+    margin-top:8%;
+    border-radius: 100px;
+}
+
+/*For the Games page*/
+.background {
+    display: block;
+    width: 100%;
+}
+
+.location{
+    background-color: black;
+    border-radius: 50px;
+    position: fixed;
+    top: 150px;
+    padding-left: 30px;
+    padding-right: 30px;
+}

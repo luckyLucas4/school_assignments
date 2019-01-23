@@ -1,0 +1,39 @@
+#nav-bar {
+    background-image: url("img/nav-bar orange.png");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 140px;
+    margin: 0px;
+    margin-bottom: 10px;
+    float: left;
+    padding-top: 20px;
+    text-align: left;
+    top: 0;
+}
+a {
+    color:black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold; 
+    text-decoration: none;
+    font-size: 40px;
+    margin-right: 3vw ;
+    
+}
+a.home {
+    font-size: 60px;
+    margin-left: 2vw;
+}
+a.active{
+    text-decoration-line:line-through;
+}
+a:hover{
+    opacity:0;
+}
+body{
+    background-image: url("img/Sunset Beach With Bean.png");
+    background-size: 100%;
+}
+table{
+    border: 1px solid black;
+    background-color: white;
+}

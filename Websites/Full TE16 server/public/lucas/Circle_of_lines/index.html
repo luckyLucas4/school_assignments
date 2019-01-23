@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Circle of Lines</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-sm-12 col-md-5 col-md-offset-1">
+                <div class="row">
+                    <canvas class="input" id="myCanvas" width="600" height="600">
+                        Sorry, your browser doesn't support the &lt;canvas&gt; element.
+                    </canvas>
+                </div>
+                <div class="row-fluid hidden-xs hidden-sm">
+                    <div class="col-md-2" >
+                        <h3><b>Controls: </b></h3>
+                    </div>
+                    <div class="col-md-2 col-md-offset-1 col bottom-column" >
+                        <h3>Draw: <span style="color:darkcyan">W</span></h3>
+                    </div>
+                    <div class="col-md-2 bottom-column" >
+                        <h3>Erase: <span style="color: darkcyan">S</span></h3>
+                    </div>
+                    <div class="col-md-7 col-lg-5 bottom-column" >
+                        <h3>Switch shape: <span style="color: darkcyan">A</span> and <span style="color: darkcyan">D</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-2 col-sm-offset-1">
+                        <button class="control-button" id="drawBtn"><b>Start drawing!</b></button>
+                        <button class="control-button" id="eraseBtn"><b>Start erasing!</b></button>
+                        <button class="control-button" id="swlBtn"><b>Switch left!</b></button>
+                        <button class="control-button" id="swrBtn"><b>Switch right!</b></button>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-1">
+                        <p id="typeText">Shape: ("normal" or "eye")</p>
+                        <input id="typeField" value="Normal">
+                        <p class="before-input">X:</p>
+                        <input type="number" id="xText" class="number-input" value="100">
+                        <input class="input-range" type="range" id="xField" max="600" value="100" >
+                        <p class="before-input">Y:</p>
+                        <input type="number" id="yText" class="number-input" value="100">
+                        <input class="input-range" type="range" id="yField" max="600" value="100">
+                        <p class="before-input">Width:</p>
+                        <input type="number" id="widthText" class="number-input" value="400">
+                        <input class="input-range" type="range" id="widthField" max="600" value="400">
+                        <p class="before-input" id="colorText">Color:</p>
+                        <input id="colorField" value="Black" class="text-input">
+                        <p class="before-input">Stroke thickness:</p>
+                        <input type="number" id="strokeText" class="number-input" value="1">
+                        <input class="input-range" type="range" id="strokeField" max="10" value="1">
+                        <br>
+                        <button type="button" onclick="NewShape()">New Shape</button>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-11 col-sm-offset-1">
+                        <div class="row">
+                            <h3>Shape Data</h3>
+                            <p id="currentShape">Current shape: </p>
+                        </div>
+                        <div class="row" id="shapeData">
+                            <div id="data1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
