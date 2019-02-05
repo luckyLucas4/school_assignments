@@ -24,15 +24,6 @@ namespace Paint
         {
             InitializeComponent();
 
-            pbx_drawArea.Controls.Add(pbx_layer);
-            pbx_layer.BackColor = Color.Transparent;
-            pbx_layer.Location = new Point(0, 0);
-
-            pbx_drawArea.Controls.Add(pictureBox3);
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Location = new Point(0, 0);
-            pictureBox3.BringToFront();
-
             drawing = new Bitmap(pbx_drawArea.Width, pbx_drawArea.Height, pbx_drawArea.CreateGraphics());
             Graphics.FromImage(drawing).Clear(Color.White);
         }
