@@ -14,11 +14,23 @@ namespace Christers_Paint
         protected Point startPos;
         protected Point currentPos;
         protected bool drawing;
-        protected List<Rectangle> figures = new List<Rectangle>();
+        protected List<Rectangle> rectangles = new List<Rectangle>();
+        protected List<Rectangle> ellipses = new List<Rectangle>();
 
-        public Figur()
+        public Figur(Point position)
         {
             BackColor = Color.Azure;
+            this.Location = position;
+            this.Size = new Size(200, 200);
+            DoubleBuffered = true;
+            SetStyle(ControlStyles.ResizeRedraw, true);
+        }
+
+        public Figur(Point position, Size size) 
+        {
+            BackColor = Color.Azure;
+            this.Location = position;
+            this.Size = size;
             DoubleBuffered = true;
             SetStyle(ControlStyles.ResizeRedraw, true);
         }
@@ -37,6 +49,45 @@ namespace Christers_Paint
         {
             currentPos = startPos = e.Location;
             drawing = true;
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            currentPos = e.Location;
+            if (drawing)
+            {
+                this.Invalidate();
+            }
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            if (drawing)
+            {
+                drawing = false;
+                currentPos = e.Location;
+                var rc = GetRectangle();
+
+                if (rc.Width > 0 & rc.Height > 0)
+                {
+                    rectangles.Add(rc);
+                }
+
+                this.Invalidate(); // Rita om fönstret
+            }
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            if(rectangles.Count > 0)
+            {
+                e.Graphics.DrawRectangles(Pens.Black, rectangles.ToArray());
+            }
+
+            if (drawing)
+            {
+                e.Graphics.DrawRectangle(Pens.Red, GetRectangle());
+            }
         }
     }
 }

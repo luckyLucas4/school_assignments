@@ -9,11 +9,11 @@ using System.Drawing.Drawing2D;
 
 namespace Christers_Paint
 {
-    class FigurRektangel : Figur
+    class FigurCirkel : Figur
     {
-        public FigurRektangel(Point position) : base(position) { }
+        public FigurCirkel(Point position) : base(position) { }
 
-        public FigurRektangel(Point position, Size size) : base(position, size) { }
+        public FigurCirkel(Point position, Size size) : base(position, size) { }
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
@@ -25,7 +25,7 @@ namespace Christers_Paint
 
                 if (rc.Width > 0 & rc.Height > 0)
                 {
-                    rectangles.Add(rc);
+                    ellipses.Add(rc);
                 }
 
                 this.Invalidate(); // Rita om fönstret
@@ -34,14 +34,17 @@ namespace Christers_Paint
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            if(rectangles.Count > 0)
+            if(ellipses.Count > 0)
             {
-                e.Graphics.DrawRectangles(Pens.Black, rectangles.ToArray());
+                foreach (Rectangle r in ellipses)
+                {
+                    e.Graphics.DrawEllipse(Pens.Black, r);
+                }
             }
 
             if (drawing)
             {
-                e.Graphics.DrawRectangle(Pens.Red, GetRectangle());
+                e.Graphics.DrawEllipse(Pens.Red, GetRectangle());
             }
         }
     }
