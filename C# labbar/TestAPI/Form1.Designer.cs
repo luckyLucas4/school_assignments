@@ -28,19 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.temp = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_Temp = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_Force = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // temp
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(309, 180);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.temp.AutoSize = true;
+            this.temp.Location = new System.Drawing.Point(387, 180);
+            this.temp.Name = "temp";
+            this.temp.Size = new System.Drawing.Size(39, 17);
+            this.temp.TabIndex = 0;
+            this.temp.Text = "temp";
             // 
             // button1
             // 
@@ -58,15 +64,62 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(256, 22);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "Arlanda";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 300;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(153, 180);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Temperatur:";
+            // 
+            // lbl_Temp
+            // 
+            this.lbl_Temp.AutoSize = true;
+            this.lbl_Temp.Location = new System.Drawing.Point(251, 180);
+            this.lbl_Temp.Name = "lbl_Temp";
+            this.lbl_Temp.Size = new System.Drawing.Size(66, 17);
+            this.lbl_Temp.TabIndex = 4;
+            this.lbl_Temp.Text = "lbl_Temp";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(154, 227);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Vindstyrka:";
+            // 
+            // lbl_Force
+            // 
+            this.lbl_Force.AutoSize = true;
+            this.lbl_Force.Location = new System.Drawing.Point(251, 227);
+            this.lbl_Force.Name = "lbl_Force";
+            this.lbl_Force.Size = new System.Drawing.Size(66, 17);
+            this.lbl_Force.TabIndex = 6;
+            this.lbl_Force.Text = "lbl_Force";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_Force);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_Temp);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.temp);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -76,9 +129,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label temp;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_Temp;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_Force;
     }
 }
 

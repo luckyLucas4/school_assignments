@@ -11,9 +11,8 @@ namespace TestAPI
 {
     class RoadConnect
     {
-        public void Start()
+        public void Start(string location)
         {
-            Console.WriteLine("--- Download data sample ---");
             WebClient webclient = new WebClient();
             webclient.Headers.Add("Referer", "http://www.example.com"); // Replace with your domain here
             // Registrer a handler that will execute when download is completed.
@@ -21,19 +20,19 @@ namespace TestAPI
             {
                 if (arguments.Cancelled == true)
                 {
-                    Console.Write("Request cancelled by user");
+                    // Console.Write("Request cancelled by user");
                 }
                 else if (arguments.Error != null)
                 {
-                    Console.WriteLine(arguments.Error.Message);
-                    Console.Write("Request Failed");
+                    // Console.WriteLine(arguments.Error.Message);
+                    // Console.Write("Request Failed");
                 }
                 else
                 {
-                    Console.WriteLine(formatXML(arguments.Result));
-                    Console.Write("Data downloaded");
+                    Form1.dataTxt = formatXML(arguments.Result);
+                    // Console.Write("Data downloaded");
                 }
-                Console.WriteLine(", press 'X' to exit.");
+                // Console.WriteLine(", press 'X' to exit.");
             };
 
             try
@@ -43,37 +42,39 @@ namespace TestAPI
                 string requestBody = "<REQUEST>" +
                                         // Use your valid authenticationkey
                                         "<LOGIN authenticationkey='daa56d50f0d149c4bb98c6c1c27090f5'/>" +
-                                        "<QUERY objecttype='TrainMessage' >" +
+                                        "<QUERY objecttype='WeatherStation' >" +
                                             "<FILTER>" +
-                                                "<IN name='Name' value='Blg'/>" +
+                                                $"<IN name='Name' value='{location}'/>" +
                                             "</FILTER>" +
-                                            "<EXCLUDE>Deleted</EXCLUDE>" +
+                                            "<INCLUDE>Measurement.Air.Temp</INCLUDE>" + 
+                                            "<INCLUDE>Measurement.MeasureTime</INCLUDE>" +
+                                            "<INCLUDE>Measurement.Wind.Force</INCLUDE>" +
                                         "</QUERY>" +
                                     "</REQUEST>";
 
                 webclient.Headers["Content-Type"] = "text/xml";
-                Console.WriteLine("Fetching data ... (press 'C' to cancel)");
+                // Console.WriteLine("Fetching data ... (press 'C' to cancel)");
                 webclient.UploadStringAsync(address, "POST", requestBody);
             }
             catch (UriFormatException)
             {
-                Console.WriteLine("Malformed url, press 'X' to exit.");
+                // Console.WriteLine("Malformed url, press 'X' to exit.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("An error occured, press 'X' to exit.");
+                // Console.WriteLine(ex.Message);
+                // Console.WriteLine("An error occured, press 'X' to exit.");
             }
 
-            char keychar = ' ';
-            while (keychar != 'X')
-            {
-                keychar = Char.ToUpper(Console.ReadKey().KeyChar);
-                if (keychar == 'C')
-                {
-                    webclient.CancelAsync();
-                }
-            }
+            //char keychar = ' ';
+            //while (keychar != 'X')
+            //{
+            //    keychar = Char.ToUpper(Console.ReadKey().KeyChar);
+            //    if (keychar == 'C')
+            //    {
+            //        webclient.CancelAsync();
+            //    }
+            //}
         }
 
         // Format xml so it is readable by humans.
