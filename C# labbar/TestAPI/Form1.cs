@@ -41,7 +41,7 @@ namespace TestAPI
             int pos3 = dataTxt.IndexOf("<Force>", 0) + "<Force>".Length;
             int pos4 = dataTxt.IndexOf("</Force>", 0);
 
-            //forceValue = dataTxt.Substring(pos3, pos4 - pos3);
+            forceValue = dataTxt.Substring(pos3, pos4 - pos3);
 
             temp.Text = dataTxt;
             lbl_Force.Text = forceValue;
