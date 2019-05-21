@@ -60,11 +60,11 @@ namespace TestAPI
             {
                 // Console.WriteLine("Malformed url, press 'X' to exit.");
             }
-            catch (Exception ex)
-            {
-                // Console.WriteLine(ex.Message);
-                // Console.WriteLine("An error occured, press 'X' to exit.");
-            }
+            //catch (Exception ex)
+            //{
+            //    // Console.WriteLine(ex.Message);
+            //    // Console.WriteLine("An error occured, press 'X' to exit.");
+            //}
 
             //char keychar = ' ';
             //while (keychar != 'X')

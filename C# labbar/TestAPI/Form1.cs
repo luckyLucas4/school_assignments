@@ -19,7 +19,7 @@ namespace TestAPI
 
         RoadConnect rc1 = new RoadConnect();
         
-        public static string dataTxt = "<Temp>0.0</Temp>";
+        public static string dataTxt = "";
 
 
 
@@ -30,22 +30,26 @@ namespace TestAPI
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            string forceValue = "none";
-            string tempValue = "none";
+            if(dataTxt.Length > 0)
+            {
+                string forceValue = "none";
+                string tempValue = "none";
+                
+                int pos1 = dataTxt.IndexOf("<Temp>", 0) + "<Temp>".Length;
+                int pos2 = dataTxt.IndexOf("</Temp>", 0);
 
-            int pos1 = dataTxt.IndexOf("<Temp>", 0) + "<Temp>".Length;
-            int pos2 = dataTxt.IndexOf("</Temp>", 0);
+                if (pos1 >= 0 && pos2 >= 0)
+                    tempValue = dataTxt.Substring(pos1, pos2 - pos1);
 
-            tempValue = dataTxt.Substring(pos1, pos2 - pos1);
+                int pos3 = dataTxt.IndexOf("<Force>", 0) + "<Force>".Length;
+                int pos4 = dataTxt.IndexOf("</Force>", 0);
+                if(pos3 >= 0 && pos4 >= 0)
+                    forceValue = dataTxt.Substring(pos3, pos4 - pos3);
 
-            int pos3 = dataTxt.IndexOf("<Force>", 0) + "<Force>".Length;
-            int pos4 = dataTxt.IndexOf("</Force>", 0);
-
-            forceValue = dataTxt.Substring(pos3, pos4 - pos3);
-
-            temp.Text = dataTxt;
-            lbl_Force.Text = forceValue;
-            lbl_Temp.Text = tempValue;
+                temp.Text = dataTxt;
+                lbl_Force.Text = forceValue;
+                lbl_Temp.Text = tempValue;
+            }
         }
     }
 }
