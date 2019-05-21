@@ -47,12 +47,12 @@ namespace Prov_uppgift_7
             }
 
             Arbetarregister reg1 = new Arbetarregister(arbetare);
-            Console.WriteLine("\nTryck 1 för att visa arbetare, 2 för att ta bort arbetare," +
-                    " 3 för att sortera efter lön, 4 för att sortera efter ålder och 5 för att avsluta");
+            
             bool menuActive = true;
             while(menuActive == true)
             {
-                
+                Console.WriteLine("\nTryck 1 för att visa arbetare, 2 för att ta bort arbetare," +
+                    " 3 för att sortera efter lön, 4 för att sortera efter ålder och 5 för att avsluta");
                 bool input = true;
 
                 while(input == true)
@@ -91,10 +91,12 @@ namespace Prov_uppgift_7
 
                         case ConsoleKey.D3:
                             reg1.sorteraEfterLön();
+                            Console.WriteLine("Sorterade efter lön");
                             break;
 
                         case ConsoleKey.D4:
                             reg1.sorteraEfterÅlder();
+                            Console.WriteLine("Soreterade efter ålder");
                             break;
 
                         case ConsoleKey.D5:
@@ -108,12 +110,6 @@ namespace Prov_uppgift_7
                     }
                 }
             }
-            reg1.visaArbetare();
-            reg1.sorteraEfterLön();
-            reg1.visaArbetare();
-            reg1.sorteraEfterÅlder();
-            reg1.visaArbetare();
-
             Console.Read();
         }
     }
