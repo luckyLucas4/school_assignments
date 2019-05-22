@@ -36,6 +36,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.syncTimer = new System.Windows.Forms.Timer(this.components);
             this.lbl_Fetch = new System.Windows.Forms.Label();
+            this.xmlTurbo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // searchInput
@@ -100,11 +101,21 @@
             this.lbl_Fetch.TabIndex = 4;
             this.lbl_Fetch.Text = "Ingen data hämtad";
             // 
+            // xmlTurbo
+            // 
+            this.xmlTurbo.AutoSize = true;
+            this.xmlTurbo.Location = new System.Drawing.Point(463, 113);
+            this.xmlTurbo.Name = "xmlTurbo";
+            this.xmlTurbo.Size = new System.Drawing.Size(46, 17);
+            this.xmlTurbo.TabIndex = 5;
+            this.xmlTurbo.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 450);
+            this.Controls.Add(this.xmlTurbo);
             this.Controls.Add(this.lbl_Fetch);
             this.Controls.Add(this.fetchButton);
             this.Controls.Add(this.searchResults);
@@ -127,6 +138,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer syncTimer;
         private System.Windows.Forms.Label lbl_Fetch;
+        private System.Windows.Forms.Label xmlTurbo;
     }
 }
 

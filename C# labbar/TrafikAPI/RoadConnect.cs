@@ -43,13 +43,22 @@ namespace TrafikAPI
                 string requestBody = "<REQUEST>" +
                                         // Use your valid authenticationkey
                                         "<LOGIN authenticationkey='daa56d50f0d149c4bb98c6c1c27090f5'/>" +
-                                        "<QUERY objecttype='WeatherStation' >" +
+                                        //"<QUERY objecttype='WeatherStation' >" +
+                                        //    "<FILTER>" +
+                                        //        $"<IN name='Name' value='{location}'/>" +
+                                        //    "</FILTER>" +
+                                        //    "<INCLUDE>Measurement.Air.Temp</INCLUDE>" + 
+                                        //    "<INCLUDE>Measurement.MeasureTime</INCLUDE>" +
+                                        //    "<INCLUDE>Measurement.Wind.Force</INCLUDE>" +
+                                        //"</QUERY>" +
+                                        "<QUERY objecttype='TrainMessage' schemaversion='1.3'>" +
                                             "<FILTER>" +
-                                                $"<IN name='Name' value='{location}'/>" +
+                                                $"<EQ name='AffectedLocation' value='Cst'/>" +
                                             "</FILTER>" +
-                                            "<INCLUDE>Measurement.Air.Temp</INCLUDE>" + 
-                                            "<INCLUDE>Measurement.MeasureTime</INCLUDE>" +
-                                            "<INCLUDE>Measurement.Wind.Force</INCLUDE>" +
+                                            "<INCLUDE>StartDateTime</INCLUDE>" +
+                                            "<INCLUDE>LastUpdateTime</INCLUDE>" +
+                                            "<INCLUDE>ReasonCodeText</INCLUDE>" +
+                                            "<INCLUDE>ExternalDescription</INCLUDE>" +
                                         "</QUERY>" +
                                     "</REQUEST>";
 

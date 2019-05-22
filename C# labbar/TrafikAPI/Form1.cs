@@ -21,22 +21,23 @@ namespace TrafikAPI
 
         RoadConnect rc = new RoadConnect();
 
-        public static string dataTxt;
+        public static string dataTxt = "";
         public static bool fetchingData = false;
         string fetchInput = "";
         private void XmlTricker(string xmlData)
         {
+            xmlTurbo.Text = xmlData;
             var stream = new MemoryStream();
             var writer = new StreamWriter(stream);
             writer.Write(xmlData);
             writer.Flush();
             stream.Position = 0;
             XmlTextReader xtr = new XmlTextReader(stream);
-            while(xtr.Read() == true)
+            while (xtr.Read() == true)
             {
-                if(xtr.NodeType == XmlNodeType.Element && xtr.Name == "Force")
+                if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "Force")
                 {
-                    lbl_Fetch.Text = xtr.ReadElementString(); 
+                    lbl_Fetch.Text = xtr.ReadElementString();
                 }
             }
         }
@@ -87,7 +88,6 @@ namespace TrafikAPI
                 XmlTricker(dataTxt);
                 lbl_Fetch.Text = $"Data hämtad från \n{fetchInput}";
             }
-
         }
     }
 }
