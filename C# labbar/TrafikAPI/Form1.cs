@@ -26,7 +26,7 @@ namespace TrafikAPI
         string fetchInput = "";
         private void XmlTricker(string xmlData)
         {
-            xmlTurbo.Text = xmlData;
+            rtb_xml.Text = xmlData;
             var stream = new MemoryStream();
             var writer = new StreamWriter(stream);
             writer.Write(xmlData);
@@ -85,9 +85,23 @@ namespace TrafikAPI
 
             if (dataTxt.Length > 0)
             {
+                dataTxt = CleanString(dataTxt);
                 XmlTricker(dataTxt);
                 lbl_Fetch.Text = $"Data hämtad från \n{fetchInput}";
             }
+        }
+
+        string CleanString(string text)
+        {
+            text = text.Replace("Ã¥", "å");
+            text = text.Replace("Ã¤", "ä");
+            text = text.Replace("Ã¶", "ö");
+
+            text = text.Replace("Ã…", "Å");
+            text = text.Replace("Ã„", "Ä");
+            text = text.Replace("Ã–", "Ö");
+
+            return text;
         }
     }
 }

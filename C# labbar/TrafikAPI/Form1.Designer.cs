@@ -36,7 +36,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.syncTimer = new System.Windows.Forms.Timer(this.components);
             this.lbl_Fetch = new System.Windows.Forms.Label();
-            this.xmlTurbo = new System.Windows.Forms.Label();
+            this.rtb_xml = new System.Windows.Forms.RichTextBox();
+            this.rb_fetch1 = new System.Windows.Forms.RadioButton();
+            this.rb_fetch2 = new System.Windows.Forms.RadioButton();
+            this.rb_fetch3 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // searchInput
@@ -101,21 +104,57 @@
             this.lbl_Fetch.TabIndex = 4;
             this.lbl_Fetch.Text = "Ingen data hämtad";
             // 
-            // xmlTurbo
+            // rtb_xml
             // 
-            this.xmlTurbo.AutoSize = true;
-            this.xmlTurbo.Location = new System.Drawing.Point(463, 113);
-            this.xmlTurbo.Name = "xmlTurbo";
-            this.xmlTurbo.Size = new System.Drawing.Size(46, 17);
-            this.xmlTurbo.TabIndex = 5;
-            this.xmlTurbo.Text = "label1";
+            this.rtb_xml.Location = new System.Drawing.Point(455, 146);
+            this.rtb_xml.Name = "rtb_xml";
+            this.rtb_xml.ReadOnly = true;
+            this.rtb_xml.Size = new System.Drawing.Size(366, 247);
+            this.rtb_xml.TabIndex = 7;
+            this.rtb_xml.Text = "";
+            // 
+            // rb_fetch1
+            // 
+            this.rb_fetch1.AutoSize = true;
+            this.rb_fetch1.Location = new System.Drawing.Point(559, 32);
+            this.rb_fetch1.Name = "rb_fetch1";
+            this.rb_fetch1.Size = new System.Drawing.Size(95, 21);
+            this.rb_fetch1.TabIndex = 8;
+            this.rb_fetch1.TabStop = true;
+            this.rb_fetch1.Text = "Väderdata";
+            this.rb_fetch1.UseVisualStyleBackColor = true;
+            // 
+            // rb_fetch2
+            // 
+            this.rb_fetch2.AutoSize = true;
+            this.rb_fetch2.Location = new System.Drawing.Point(559, 59);
+            this.rb_fetch2.Name = "rb_fetch2";
+            this.rb_fetch2.Size = new System.Drawing.Size(132, 21);
+            this.rb_fetch2.TabIndex = 9;
+            this.rb_fetch2.TabStop = true;
+            this.rb_fetch2.Text = "Tågmeddelande";
+            this.rb_fetch2.UseVisualStyleBackColor = true;
+            // 
+            // rb_fetch3
+            // 
+            this.rb_fetch3.AutoSize = true;
+            this.rb_fetch3.Location = new System.Drawing.Point(559, 86);
+            this.rb_fetch3.Name = "rb_fetch3";
+            this.rb_fetch3.Size = new System.Drawing.Size(94, 21);
+            this.rb_fetch3.TabIndex = 10;
+            this.rb_fetch3.TabStop = true;
+            this.rb_fetch3.Text = "Request 3";
+            this.rb_fetch3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 450);
-            this.Controls.Add(this.xmlTurbo);
+            this.ClientSize = new System.Drawing.Size(858, 450);
+            this.Controls.Add(this.rb_fetch3);
+            this.Controls.Add(this.rb_fetch2);
+            this.Controls.Add(this.rb_fetch1);
+            this.Controls.Add(this.rtb_xml);
             this.Controls.Add(this.lbl_Fetch);
             this.Controls.Add(this.fetchButton);
             this.Controls.Add(this.searchResults);
@@ -138,7 +177,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer syncTimer;
         private System.Windows.Forms.Label lbl_Fetch;
-        private System.Windows.Forms.Label xmlTurbo;
+        private System.Windows.Forms.RichTextBox rtb_xml;
+        private System.Windows.Forms.RadioButton rb_fetch1;
+        private System.Windows.Forms.RadioButton rb_fetch2;
+        private System.Windows.Forms.RadioButton rb_fetch3;
     }
 }
 
