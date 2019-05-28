@@ -11,6 +11,41 @@ namespace TrafikAPI
 {
     class RoadConnect
     {
+        public List<string> ReturnRequests()
+        {
+            List<string> requests = new List<string>();
+
+            requests.Add(
+                "<REQUEST>" +
+                    "<LOGIN authenticationkey='daa56d50f0d149c4bb98c6c1c27090f5'/>" +
+                    "<QUERY objecttype='WeatherStation' >" +
+                        "<FILTER>" +
+                            $"<IN name='Name' value='{{location}}'/>" +
+                        "</FILTER>" +
+                        "<INCLUDE>Measurement.Air.Temp</INCLUDE>" +
+                        "<INCLUDE>Measurement.MeasureTime</INCLUDE>" +
+                        "<INCLUDE>Measurement.Wind.Force</INCLUDE>" +
+                    "</QUERY>" +
+                "</REQUEST>"
+                );
+
+            requests.Add(
+                "<REQUEST>" +
+                    "<LOGIN authenticationkey='daa56d50f0d149c4bb98c6c1c27090f5'/>" +
+                    "<QUERY objecttype='TrainMessage' schemaversion='1.3'>" +
+                        "<FILTER>" +
+                            $"<EQ name='AffectedLocation' value='{{location}}'/>" +
+                        "</FILTER>" +
+                        "<INCLUDE>StartDateTime</INCLUDE>" +
+                        "<INCLUDE>LastUpdateTime</INCLUDE>" +
+                        "<INCLUDE>ReasonCodeText</INCLUDE>" +
+                        "<INCLUDE>ExternalDescription</INCLUDE>" +
+                    "</QUERY>" +
+                "</REQUEST>"
+                );
+
+            return requests;
+        }
         public void Start(string location)
         {
             WebClient webclient = new WebClient();
@@ -40,27 +75,8 @@ namespace TrafikAPI
             {
                 // API server url
                 Uri address = new Uri("http://api.trafikinfo.trafikverket.se/v1/data.xml");
-                string requestBody = "<REQUEST>" +
-                                        // Use your valid authenticationkey
-                                        "<LOGIN authenticationkey='daa56d50f0d149c4bb98c6c1c27090f5'/>" +
-                                        //"<QUERY objecttype='WeatherStation' >" +
-                                        //    "<FILTER>" +
-                                        //        $"<IN name='Name' value='{location}'/>" +
-                                        //    "</FILTER>" +
-                                        //    "<INCLUDE>Measurement.Air.Temp</INCLUDE>" + 
-                                        //    "<INCLUDE>Measurement.MeasureTime</INCLUDE>" +
-                                        //    "<INCLUDE>Measurement.Wind.Force</INCLUDE>" +
-                                        //"</QUERY>" +
-                                        "<QUERY objecttype='TrainMessage' schemaversion='1.3'>" +
-                                            "<FILTER>" +
-                                                $"<EQ name='AffectedLocation' value='Cst'/>" +
-                                            "</FILTER>" +
-                                            "<INCLUDE>StartDateTime</INCLUDE>" +
-                                            "<INCLUDE>LastUpdateTime</INCLUDE>" +
-                                            "<INCLUDE>ReasonCodeText</INCLUDE>" +
-                                            "<INCLUDE>ExternalDescription</INCLUDE>" +
-                                        "</QUERY>" +
-                                    "</REQUEST>";
+                string requestBody = Form1.requests[Form1.currentRequest];
+                requestBody = requestBody.Replace("{location}", location);
 
                 webclient.Headers["Content-Type"] = "text/xml";
                 // Console.WriteLine("Fetching data ... (press 'C' to cancel)");
