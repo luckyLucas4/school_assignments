@@ -40,15 +40,6 @@
             this.rb_fetch1 = new System.Windows.Forms.RadioButton();
             this.rb_fetch2 = new System.Windows.Forms.RadioButton();
             this.rb_fetch3 = new System.Windows.Forms.RadioButton();
-            this.wizard = new Piksel.Controls.TabWizard.TabWizardControl();
-            this.tpIntro = new System.Windows.Forms.TabPage();
-            this.tpParameters = new System.Windows.Forms.TabPage();
-            this.pLoadParameters = new System.Windows.Forms.Panel();
-            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
-            this.wizard.SuspendLayout();
-            this.tpIntro.SuspendLayout();
-            this.tpParameters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchInput
@@ -155,66 +146,11 @@
             this.rb_fetch3.Text = "Request 3";
             this.rb_fetch3.UseVisualStyleBackColor = true;
             // 
-            // wizard
-            // 
-            this.wizard.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.wizard.Controls.Add(this.tpIntro);
-            this.wizard.Controls.Add(this.tpParameters);
-            this.wizard.Location = new System.Drawing.Point(906, 42);
-            this.wizard.Name = "wizard";
-            this.wizard.NextButton = null;
-            this.wizard.NextButtonLastText = null;
-            this.wizard.PreviousButton = null;
-            this.wizard.SelectedIndex = 0;
-            this.wizard.Size = new System.Drawing.Size(458, 351);
-            this.wizard.TabIndex = 11;
-            this.wizard.Text = null;
-            // 
-            // tpIntro
-            // 
-            this.tpIntro.Controls.Add(this.objectListView1);
-            this.tpIntro.Location = new System.Drawing.Point(4, 25);
-            this.tpIntro.Name = "tpIntro";
-            this.tpIntro.Padding = new System.Windows.Forms.Padding(3);
-            this.tpIntro.Size = new System.Drawing.Size(450, 322);
-            this.tpIntro.TabIndex = 0;
-            this.tpIntro.Text = "tabPage1";
-            this.tpIntro.UseVisualStyleBackColor = true;
-            // 
-            // tpParameters
-            // 
-            this.tpParameters.Controls.Add(this.pLoadParameters);
-            this.tpParameters.Location = new System.Drawing.Point(4, 25);
-            this.tpParameters.Name = "tpParameters";
-            this.tpParameters.Padding = new System.Windows.Forms.Padding(3);
-            this.tpParameters.Size = new System.Drawing.Size(450, 322);
-            this.tpParameters.TabIndex = 1;
-            this.tpParameters.Text = "Parameters";
-            this.tpParameters.UseVisualStyleBackColor = true;
-            // 
-            // pLoadParameters
-            // 
-            this.pLoadParameters.Location = new System.Drawing.Point(0, 0);
-            this.pLoadParameters.Name = "pLoadParameters";
-            this.pLoadParameters.Size = new System.Drawing.Size(454, 326);
-            this.pLoadParameters.TabIndex = 0;
-            // 
-            // objectListView1
-            // 
-            this.objectListView1.CellEditUseWholeCell = false;
-            this.objectListView1.Location = new System.Drawing.Point(0, 0);
-            this.objectListView1.Name = "objectListView1";
-            this.objectListView1.Size = new System.Drawing.Size(450, 326);
-            this.objectListView1.TabIndex = 0;
-            this.objectListView1.UseCompatibleStateImageBehavior = false;
-            this.objectListView1.View = System.Windows.Forms.View.Details;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1390, 450);
-            this.Controls.Add(this.wizard);
+            this.ClientSize = new System.Drawing.Size(858, 450);
             this.Controls.Add(this.rb_fetch3);
             this.Controls.Add(this.rb_fetch2);
             this.Controls.Add(this.rb_fetch1);
@@ -227,10 +163,6 @@
             this.Controls.Add(this.searchInput);
             this.Name = "Form1";
             this.Text = "Trafikverkets API";
-            this.wizard.ResumeLayout(false);
-            this.tpIntro.ResumeLayout(false);
-            this.tpParameters.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,11 +181,6 @@
         private System.Windows.Forms.RadioButton rb_fetch1;
         private System.Windows.Forms.RadioButton rb_fetch2;
         private System.Windows.Forms.RadioButton rb_fetch3;
-        private Piksel.Controls.TabWizard.TabWizardControl wizard;
-        private System.Windows.Forms.TabPage tpIntro;
-        private System.Windows.Forms.TabPage tpParameters;
-        private System.Windows.Forms.Panel pLoadParameters;
-        private BrightIdeasSoftware.ObjectListView objectListView1;
     }
 }
 
