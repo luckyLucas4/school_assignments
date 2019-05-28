@@ -11,11 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
-using Google.Apis.Books.v1;
-using Google.Apis.Books.v1.Data;
-using Google.Apis.Services;
-
-
 namespace TrafikAPI
 {
     public partial class Form1 : Form
@@ -23,9 +18,11 @@ namespace TrafikAPI
         public Form1()
         {
             InitializeComponent();
+            bc.Run().Wait();
         }
 
         RoadConnect rc = new RoadConnect();
+        BookConnect bc = new BookConnect();
 
         public static string dataTxt = "";
         public static bool fetchingData = false;
@@ -97,19 +94,6 @@ namespace TrafikAPI
             }
         }
 
-        private async Task Run()
-        {
-            // Create the service.
-            var service = new BooksService(new BaseClientService.Initializer
-            {
-                ApplicationName = "Books Sample",
-                ApiKey = "AIzaSyBISBUgSvs3xXDGmKp3WoQZlmY7Sbb20c4",
-            });
-
-            // Run the request.
-            Console.WriteLine("Executing a list request...");
-            
-        }
         string CleanString(string text)
         {
             text = text.Replace("Ã¥", "å");
