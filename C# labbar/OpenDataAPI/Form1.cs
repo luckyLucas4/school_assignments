@@ -54,38 +54,47 @@ namespace TrafikAPI
             XmlTextReader xtr = new XmlTextReader(stream);
             while (xtr.Read() == true)
             {
-                if(xtr.IsStartElement())
+                if (xtr.IsStartElement())
                     lv_tags.Items.Add(new ListViewItem(xtr.Name));
-                if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "Force")
-                {
-                    lbl_Fetch.Text = xtr.ReadElementString();
-                }
             }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            if (searchInput.Text != null && searchInput.Text.Length >= 3)
+            if (searchInput.Text != null && searchInput.Text.Length >= 3 && dataTxt.Length > 0)
             {
-                XmlDocument doc = new XmlDocument();
-                doc.Load("Cars.xml");
+                var stream = new MemoryStream();
+                var writer = new StreamWriter(stream);
+                writer.Write(dataTxt);
+                writer.Flush();
+                stream.Position = 0;
+                XmlTextReader xtr = new XmlTextReader(stream);
 
-                foreach (XmlNode node in doc.DocumentElement)
+                while (xtr.Read() == true)
                 {
-                    string name = node.Attributes[0].InnerText;
-                    if (name == searchInput.Text)
+                    if(xtr.NodeType == XmlNodeType.Element && xtr.Name == searchInput.Text)
                     {
-                        foreach (XmlNode child in node.ChildNodes)
-                        {
-                            lv_searchResults.Items.Add(child.InnerText);
-                        }
+                        rtb_search.Text = xtr.ReadInnerXml();
                     }
                 }
+
+                //    XmlDocument doc = new XmlDocument();
+
+                //    foreach (XmlNode node in doc.DocumentElement)
+                //    {
+                //        string name = node.Attributes[0].InnerText;
+                //        if (name == searchInput.Text)
+                //        {
+                //            foreach (XmlNode child in node.ChildNodes)
+                //            {
+                //                lv_searchResults.Items.Add(child.InnerText);
+                //            }
+                //        }
+                //    }
             }
             else
             {
                 MessageBox.Show("Invalid input");
-                searchInput.Text = string.Empty;
                 searchInput.Focus();
             }
         }
@@ -107,8 +116,8 @@ namespace TrafikAPI
 
             if (dataTxt.Length > 0)
             {
-                dataTxt = CleanString(dataTxt);
                 XmlTricker(dataTxt);
+                rtb_xml.Text = dataTxt;
                 lbl_Fetch.Text = $"Data hämtad från \n{fetchInput}";
             }
         }

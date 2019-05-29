@@ -48,9 +48,10 @@
             this.lbl_smhi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lv_tags = new System.Windows.Forms.ListView();
+            this.ch_tags = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_tags = new System.Windows.Forms.Label();
             this.lbl_search = new System.Windows.Forms.Label();
-            this.ch_tags = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rtb_search = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.num_lat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_lon)).BeginInit();
             this.SuspendLayout();
@@ -58,15 +59,16 @@
             // searchInput
             // 
             this.searchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchInput.Location = new System.Drawing.Point(386, 82);
+            this.searchInput.Location = new System.Drawing.Point(390, 84);
             this.searchInput.Margin = new System.Windows.Forms.Padding(2);
             this.searchInput.Name = "searchInput";
             this.searchInput.Size = new System.Drawing.Size(149, 24);
             this.searchInput.TabIndex = 0;
+            this.searchInput.Text = "Temp";
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(539, 82);
+            this.searchButton.Location = new System.Drawing.Point(555, 83);
             this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(39, 26);
@@ -77,13 +79,14 @@
             // 
             // lv_searchResults
             // 
-            this.lv_searchResults.Location = new System.Drawing.Point(386, 117);
+            this.lv_searchResults.Location = new System.Drawing.Point(642, 336);
             this.lv_searchResults.Margin = new System.Windows.Forms.Padding(2);
             this.lv_searchResults.Name = "lv_searchResults";
-            this.lv_searchResults.Size = new System.Drawing.Size(262, 201);
+            this.lv_searchResults.Size = new System.Drawing.Size(20, 19);
             this.lv_searchResults.TabIndex = 2;
             this.lv_searchResults.UseCompatibleStateImageBehavior = false;
-            this.lv_searchResults.View = System.Windows.Forms.View.List;
+            this.lv_searchResults.View = System.Windows.Forms.View.Tile;
+            this.lv_searchResults.Visible = false;
             // 
             // fetchButton
             // 
@@ -279,11 +282,16 @@
             this.lv_tags.UseCompatibleStateImageBehavior = false;
             this.lv_tags.View = System.Windows.Forms.View.SmallIcon;
             // 
+            // ch_tags
+            // 
+            this.ch_tags.Text = "Taggar i data";
+            this.ch_tags.Width = 80;
+            // 
             // lbl_tags
             // 
             this.lbl_tags.AutoSize = true;
             this.lbl_tags.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tags.Location = new System.Drawing.Point(695, 93);
+            this.lbl_tags.Location = new System.Drawing.Point(670, 91);
             this.lbl_tags.Name = "lbl_tags";
             this.lbl_tags.Size = new System.Drawing.Size(79, 15);
             this.lbl_tags.TabIndex = 18;
@@ -292,22 +300,29 @@
             // lbl_search
             // 
             this.lbl_search.AutoSize = true;
-            this.lbl_search.Location = new System.Drawing.Point(399, 45);
+            this.lbl_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_search.Location = new System.Drawing.Point(387, 64);
+            this.lbl_search.Margin = new System.Windows.Forms.Padding(2);
             this.lbl_search.Name = "lbl_search";
-            this.lbl_search.Size = new System.Drawing.Size(109, 13);
+            this.lbl_search.Size = new System.Drawing.Size(137, 15);
             this.lbl_search.TabIndex = 19;
-            this.lbl_search.Text = "Sök information i data";
+            this.lbl_search.Text = "Sök information i taggar";
             // 
-            // ch_tags
+            // rtb_search
             // 
-            this.ch_tags.Text = "Taggar i data";
-            this.ch_tags.Width = 80;
+            this.rtb_search.Location = new System.Drawing.Point(390, 121);
+            this.rtb_search.Name = "rtb_search";
+            this.rtb_search.ReadOnly = true;
+            this.rtb_search.Size = new System.Drawing.Size(242, 196);
+            this.rtb_search.TabIndex = 31;
+            this.rtb_search.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 366);
+            this.Controls.Add(this.rtb_search);
             this.Controls.Add(this.lbl_search);
             this.Controls.Add(this.lbl_tags);
             this.Controls.Add(this.lv_tags);
@@ -363,6 +378,7 @@
         private System.Windows.Forms.Label lbl_tags;
         private System.Windows.Forms.Label lbl_search;
         private System.Windows.Forms.ColumnHeader ch_tags;
+        private System.Windows.Forms.RichTextBox rtb_search;
     }
 }
 
