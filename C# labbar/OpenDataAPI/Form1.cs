@@ -56,6 +56,26 @@ namespace TrafikAPI
             {
                 if (xtr.IsStartElement())
                     lv_tags.Items.Add(new ListViewItem(xtr.Name));
+                if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "Force")
+                {
+                    force.Text = xtr.ReadElementString();
+                }
+                if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "Temp")
+                {
+                    temp.Text = xtr.ReadElementString();
+                }
+                if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "DirectionText")
+                {
+                    direction.Text = xtr.ReadElementString();
+                }
+                if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "Type")
+                {
+                    amount.Text = xtr.ReadElementString();
+                }
+                if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "RelativeHumidity")
+                {
+                    humidity.Text = xtr.ReadElementString();
+                }
             }
         }
 
@@ -110,12 +130,14 @@ namespace TrafikAPI
 
         private void SyncTimer_Tick(object sender, EventArgs e)
         {
+            
             lbl_error.Text = errorMessage;
             if(fetchingData == false)
                 syncTimer.Enabled = false;
 
             if (dataTxt.Length > 0)
             {
+                dataTxt = CleanString(dataTxt);
                 XmlTricker(dataTxt);
                 rtb_xml.Text = dataTxt;
                 lbl_Fetch.Text = $"Data hämtad från \n{fetchInput}";
@@ -153,11 +175,31 @@ namespace TrafikAPI
         private void Rb_fetch1_CheckedChanged(object sender, EventArgs e)
         {
             currentRequest = 0;
+            force.Visible = true;
+            temp.Visible = true;
+            amount.Visible = true;
+            direction.Visible = true;
+            humidity.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            label7.Visible = true;
+            label6.Visible = true;
         }
 
         private void Rb_fetch2_CheckedChanged(object sender, EventArgs e)
         {
             currentRequest = 1;
+            force.Visible = false;
+            temp.Visible = false;
+            amount.Visible = false;
+            direction.Visible = false;
+            humidity.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
         }
     }
 }

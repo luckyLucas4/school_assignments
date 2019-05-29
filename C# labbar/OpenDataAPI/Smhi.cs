@@ -61,8 +61,8 @@ namespace SmhiWeather
             Form1.fetchingData = true;
             if (_cachedForecast == null || _lastRequestUtcTime + _refreshInterval < DateTime.UtcNow)
             {
-                string lat = CoordLat.ToString("0").Replace(",", ".");
-                string lon = CoordLon.ToString("0").Replace(",", ".");
+                string lat = CoordLat.ToString("0.00").Replace(",", ".");
+                string lon = CoordLon.ToString("0.00").Replace(",", ".");
                 string uri = $"http://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{lon}/lat/{lat}/data.json";
                 HttpWebRequest webRequest = WebRequest.CreateHttp(uri);
 

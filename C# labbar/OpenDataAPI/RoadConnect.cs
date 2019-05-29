@@ -25,6 +25,9 @@ namespace TrafikAPI
                         "<INCLUDE>Measurement.Air.Temp</INCLUDE>" +
                         "<INCLUDE>Measurement.MeasureTime</INCLUDE>" +
                         "<INCLUDE>Measurement.Wind.Force</INCLUDE>" +
+                        "<INCLUDE>Measurement.Wind.DirectionText</INCLUDE>" +
+                        "<INCLUDE>Measurement.Precipitation.Type</INCLUDE>" +
+                        "<INCLUDE>Measurement.Air.RelativeHumidity</INCLUDE>" +
                     "</QUERY>" +
                 "</REQUEST>"
                 );
